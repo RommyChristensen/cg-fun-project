@@ -71,7 +71,9 @@ app.post('/upload', (req, res) => {
       return res.status(400).json({ error: 'No file uploaded' });
     }
 
-    const photoUrl = `http://localhost:3001/uploads/${req.file.filename}`;
+    const protocol = req.secure ? 'https' : 'http';
+    const host = req.get('host');
+    const photoUrl = `${protocol}://${host}/uploads/${req.file.filename}`;
     console.log('File uploaded successfully:', req.file.filename);
     res.json({ photoUrl, filename: req.file.filename });
   });
@@ -83,6 +85,10 @@ app.get('/health', (req, res) => {
 
 app.get('/api/moments', (req, res) => {
   try {
+    const protocol = req.secure ? 'https' : 'http';
+    const host = req.get('host');
+    const baseUrl = `${protocol}://${host}`;
+
     const files = fs.readdirSync(uploadDir);
     const moments = files
       .filter((file) => {
@@ -91,7 +97,7 @@ app.get('/api/moments', (req, res) => {
       })
       .map((file) => ({
         id: file,
-        photoUrl: `http://localhost:3001/uploads/${file}`,
+        photoUrl: `${baseUrl}/uploads/${file}`,
         filename: file,
       }));
 
