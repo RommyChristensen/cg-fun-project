@@ -40,8 +40,15 @@ const upload = multer({
 });
 const io = socketIo(server, {
   cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'http://localhost:3002',
+      'https://cg-fun-companion.netlify.app',
+      'https://cg-fun-project.onrender.com',
+    ],
     methods: ['GET', 'POST'],
+    credentials: true,
   },
 });
 
