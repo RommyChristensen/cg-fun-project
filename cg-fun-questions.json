@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "question": "What is the name of our church?",
+        "type": "question",
+        "category": "Church Knowledge"
+    },
+    {
+        "id": 2,
+        "question": "Do 10 jumping jacks as a group!",
+        "type": "challenge",
+        "category": "Physical"
+    },
+    {
+        "id": 3,
+        "question": "How many members are in your cell group?",
+        "type": "question",
+        "category": "Group Knowledge"
+    },
+    {
+        "id": 4,
+        "question": "Sing the church anthem together!",
+        "type": "challenge",
+        "category": "Creative"
+    },
+    {
+        "id": 5,
+        "question": "What year was CG FUN started?",
+        "type": "question",
+        "category": "Church Knowledge"
+    },
+    {
+        "id": 6,
+        "question": "Everyone share one fun memory from CG FUN!",
+        "type": "challenge",
+        "category": "Bonding"
+    },
+    {
+        "id": 7,
+        "question": "What is the main purpose of CG FUN?",
+        "type": "question",
+        "category": "Church Knowledge"
+    },
+    {
+        "id": 8,
+        "question": "Do a group dance move together!",
+        "type": "challenge",
+        "category": "Creative"
+    },
+    {
+        "id": 9,
+        "question": "Who is the current cell group leader?",
+        "type": "question",
+        "category": "Group Knowledge"
+    },
+    {
+        "id": 10,
+        "question": "Everyone take a silly selfie together!",
+        "type": "challenge",
+        "category": "Creative"
+    },
+    {
+        "id": 11,
+        "question": "What is your favorite CG FUN activity?",
+        "type": "question",
+        "category": "Personal"
+    },
+    {
+        "id": 12,
+        "question": "High five everyone in the room!",
+        "type": "challenge",
+        "category": "Bonding"
+    },
+    {
+        "id": 13,
+        "question": "How often does CG FUN happen?",
+        "type": "question",
+        "category": "Church Knowledge"
+    },
+    {
+        "id": 14,
+        "question": "Tell a joke to make everyone laugh!",
+        "type": "challenge",
+        "category": "Creative"
+    },
+    {
+        "id": 15,
+        "question": "What is the best thing about being in a cell group?",
+        "type": "question",
+        "category": "Personal"
+    }
+]

@@ -1,0 +1,238 @@
+.trivia-header {
+  background: linear-gradient(135deg, var(--primary-teal) 0%, #0d9970 100%);
+  padding: 15px 20px;
+  color: var(--white);
+}
+
+.progress-info {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-yellow);
+  transition: width 0.3s ease;
+}
+
+.trivia-content {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-card {
+  width: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: cardFlip 0.6s ease-out;
+  perspective: 1000px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: visible;
+  border: 4px solid #1a1a1a;
+}
+
+.question-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: var(--white);
+  border: 4px solid #1a1a1a;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.question-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-teal), var(--primary-yellow), var(--primary-orange));
+}
+
+.question-card-type {
+  border: 2px solid #e0e0e0;
+}
+
+.challenge-card {
+  border: 2px solid var(--primary-orange);
+  background: linear-gradient(135deg, rgba(238, 150, 75, 0.05) 0%, rgba(29, 181, 132, 0.05) 100%);
+}
+
+.card-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-text {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--dark-navy);
+  text-align: center;
+  line-height: 1.6;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.challenge-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px dashed #e0e0e0;
+}
+
+.challenge-prompt {
+  text-align: center;
+}
+
+.challenge-prompt p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.challenge-completed {
+  text-align: center;
+  padding: 20px;
+  background: #e8f5e9;
+  border-radius: 12px;
+}
+
+.checkmark {
+  font-size: 48px;
+  color: var(--primary-teal);
+  margin-bottom: 10px;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.challenge-completed p {
+  font-size: 16px;
+  color: var(--primary-teal);
+  font-weight: 600;
+}
+
+.card-info {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 15px;
+}
+
+.trivia-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 15px 20px;
+  background: var(--white);
+  border-top: 1px solid #e0e0e0;
+}
+
+.trivia-footer .btn {
+  flex: 1;
+}
+
+.trivia-footer .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.waiting-text {
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  padding: 10px;
+}
+
+@keyframes cardFlip {
+  from {
+    opacity: 0;
+    transform: rotateY(90deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0) scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.comic-action {
+  position: absolute;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid #1a1a1a;
+  border-radius: 50%;
+  padding: 10px 15px;
+  background: var(--primary-yellow);
+  transform: rotate(-15deg);
+  animation: popIn 0.5s ease-out;
+  z-index: 10;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0);
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .question-card {
+    min-height: 300px;
+    padding: 20px 15px;
+  }
+
+  .question-text {
+    font-size: 20px;
+  }
+}

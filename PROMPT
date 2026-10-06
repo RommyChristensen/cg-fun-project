@@ -1,0 +1,145 @@
+Act as an expert web developer that can develop a multi screen application using react. I want to make a mobile application (using web) named "CG FUN COMPANION APP".
+Basically CG FUN is an event in my church where every week they make a fun church cell group to bond with each other and make church cell more fun and exciting. I want to make an application to accompany their activity. I have a several stages to implement.
+
+General Idea of the App itself
+- The app will have a room system where users can create or join a room
+- The app will have a game system where users can play games in the room
+- There is also CG FUN MOMENTS where when the user open the menu, the will seeing others CG FUN MOMENTS, they can add their photo as well. There will be a collage of photos of CG FUN MOMENTS.
+- Option for the game will be 
+    * CG FUN TRIVIA -> i will explain this later
+
+Stage 1 - CG FUN TRIVIA
+I will add a file named "cg-fun-questions.json", the file will contains an array of object where there is 2 types: question and challenge. When player create a room and other people have join, they can play the game by clicking play. Then the game will randomize 10 questions (mixed up between challenges and questions). The room master (the one who create the room) can navigate through the questions one by one by clicking next / previous button. Each time they encounter a challenge, they must complete the challenge first before move on to the questions. When the finished the questions, make a success page that shows they are succeded in completing CG FUN TRIVIA games. They can play infinite number of games.
+
+Make the UI reference using the "CG FUN.jpeg" file. Using the pallete color as well. I want when they open the cg fun trivia game, it looks like they holding a card, so design each question as a card (in this case, they will opening it on their mobile phone).
+
+Any question before continue to develop the game?
+
+-----------------
+
+1. Room System & Real-time Sync: Should the room system use a backend (Firebase, Supabase, Node.js) for real-time synchronization, or would you prefer a simpler local/session-based approach for now?
+Answer: Yes, the room system should use a backend, but for now i prefer a simpler session-based approach
+
+2. Challenge Mechanics: For challenges, what should happen? Should:
+The room master manually confirm completion?
+There be a timer?
+Players input something (photo, text)?
+Answer: The room master can manually confirm completion, there will be no timer
+
+3. CG FUN MOMENTS Feature: For the photo collage:
+Should photos be stored locally or uploaded to a backend?
+Should it be a separate screen or integrated into the main menu?
+Answer: the photos will uploaded to the backend, and it would be a separate screen for now
+
+4. Question Format: Looking at your JSON, I see questions have id, question, and type. Should I expand this to include:
+Answer options (for trivia)?
+Difficulty level?
+Category?
+Answer: No need for answer option and difficulty level, but you can add category. Just make a sample questions and challenges for testing purposes.
+
+5. Multi-screen Navigation: Should the app have:
+Home screen (create/join room)
+Room lobby (waiting for players)
+Game selection screen
+Trivia game screen
+Success screen
+CG FUN Moments screen?
+Answer: yess absolutely
+
+6. Player Roles: Only the room master can navigate questions, but can other players see the same card/question on their screens?
+Answer: Yess, other player will see the same card/questions on their screen.
+
+Any other question?
+
+-----------------
+
+I'd like to ask a few clarifying questions before redesigning to comic book style:
+
+1. **Comic Book Style Type**: 
+   - Classic comic (like Marvel/DC with bold outlines and speech bubbles)?
+   - Manga/anime style?
+   - Pop art style (like Roy Lichtenstein)?
+   - Graffiti/street art style?
+Answer: Classic Comic
+
+2. **Color Scheme**:
+   - Keep the current teal/yellow/orange palette but with comic effects?
+   - Or change to more traditional comic colors (reds, blues, yellows)?
+Answer: Keep the current teal/yellow/orange palette but with comic effects
+
+3. **Elements to Add**:
+   - Speech bubbles for text?
+   - "POW!", "BAM!", "BOOM!" style action words?
+   - Comic-style borders/panels?
+   - Halftone dot patterns?
+   - Bold black outlines on elements?
+Answer: Yes to all
+
+4. **Specific Screens**:
+   - Apply comic style to all screens or just the trivia cards?
+   - Should buttons look like comic book action buttons?
+Answer: Apply comic style to all screens
+
+5. **Do you have a reference image** of the comic book style you want, or should I create something based on your preference?
+Answer: One of my reference is the "CG FUN.jpeg" file in this directory. Other than that, you can adjust to your preference.
+
+Let me know your preferences and I'll redesign the entire app with comic book vibes! 🎨
+
+-----------------
+
+okay now Stage 2
+TRIVIA Game
+- add option where room master can choose any number of questions they will get with maximum of 25 questions. Make the challenges have a 10% chance to shows up.
+
+CG FUN MOMENTS
+- add functionality to add a picture from their devices, and store it in the public folder (or anywhere)
+- shows the photo collage when user is in the cg fun moments Feature
+
+any questions?
+
+------------------
+
+I have a few clarifying questions before I start Stage 2:
+
+## TRIVIA Game Questions:
+
+1. **Question Selection UI**: Where should the room master choose the number of questions?
+   - On the Room Lobby screen before clicking "Play Trivia"?
+   - On a new "Game Settings" screen?
+   - A popup/modal dialog?
+- Answer: A popup / modal dialog when room master clicking the "Play Trivia" button
+
+2. **Challenge Distribution**: You mentioned 10% chance for challenges. Should I:
+   - Randomly select questions where 10% are challenges?
+   - Or filter the questions pool to have ~10% challenges?
+   - What if there aren't enough challenges in the database?
+- Answer: Randomly select questions where 10% are challenges, there will be a plenty of questions, i just not have input it yet.
+
+3. **Question Pool**: Should the selection be:
+   - Random 1-25 questions from all available questions?
+   - User selects specific questions?
+   - Just random selection with the count they choose?
+- Answer: Random 1-25 questions from all available questions
+
+## CG FUN MOMENTS Questions:
+
+1. **File Upload**: For storing photos from devices:
+   - Should I use a file input to upload to the public folder?
+   - Should photos be stored as base64 in memory/localStorage (simpler)?
+   - Or actual file upload to backend?
+- Answer: actual file upload to backend, so that the picture can be showed
+
+2. **Photo Persistence**: Should photos:
+   - Persist only during the session (lost on refresh)?
+   - Be saved to localStorage (persist across sessions)?
+   - Be uploaded to a backend server?
+- Answer: Be uploaded to backend server
+
+3. **Photo Display**: In the moments collage:
+   - Keep the 2-column grid layout?
+   - Any specific size/aspect ratio for photos?
+- Answer: yess, keep 2 column grid layout
+
+Let me know your preferences and I'll implement Stage 2! 🚀
+
+------------------
