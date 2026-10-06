@@ -45,6 +45,7 @@ const io = socketIo(server, {
       'http://localhost:3001',
       'http://localhost:3002',
       'https://cg-fun-companion.netlify.app',
+      'https://cgfunpuri.netlify.app',
       'https://cg-fun-project.onrender.com',
     ],
     methods: ['GET', 'POST'],
